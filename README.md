@@ -1,28 +1,37 @@
-# India Banking Performance Index 2026 (IBPI)
+# India Banking Performance Index 2026 (IBPI) – V3
 
-A static, responsive GitHub Pages dashboard for exploring available Indian bank financial data. The interface provides metric-based rankings, listed-bank market-cap snapshot, multi-bank historical comparison, individual profiles, methodology, source register and CSV/JSON exports.
+V3 adds a calculated **PSB FY26 Three-Factor Pilot Score** for the 12 Indian public-sector banks. The score is a peer-relative research pilot, not the completed all-bank IBPI.
 
-## Deploy
+## Pilot score inputs and weights
 
-1. Keep `index.html` and the `data/` folder at repository root.
-2. In GitHub, open **Settings → Pages**.
-3. Select **Deploy from a branch**, branch `main`, folder `/ (root)` and Save.
+- FY26 net profit (absolute earnings scale): 40%
+- FY26 CRAR: 30%
+- FY26 net-profit growth over FY25: 30%
 
-## Data status and important limitations
+Each input is converted into a percentile rank within the 12-bank PSB cohort. Highest value = 100; lowest = 0; ties receive average rank. Weighted contributions are summed to 100. Values and weights are stored in `data/banks.json`; the browser calculates the score from those observations.
 
-This is a research prototype using a partial dataset transcribed from a research exchange. It is **not** a completed or certified Top 50 ranking. No overall composite scores are calculated. Market-cap values and several bank-year observations require independent reconciliation to source documents before analytical or investment use. Missing values are not imputed as zero.
+## Crucial limitations
 
-The current profile set is limited to banks for which historical observations were supplied. The rankings view ranks only available observations for the selected metric. Peer groups, merger restatements, standalone/consolidated basis and domestic/global reporting scope must be reconciled before cross-bank scoring.
-
-## Files
-
-- `index.html` — dashboard UI and client-side visualisations
-- `data/banks.json` — current data extract, weights, caveats and source register
-
-## Updating data
-
-Edit `data/banks.json` while preserving valid JSON. Add exact source URLs and page/table references for each bank-year metric in the next data release. Do not publish a composite rank until the eligible universe has passed data completeness and reconciliation checks.
+- This score covers **only 12 public-sector banks**. It must not be compared with private banks, small finance banks or foreign banks.
+- Absolute net profit is an earnings-scale metric, not ROA/ROE or profitability efficiency.
+- The pilot does not include asset quality, five-year growth, liquidity, cost-to-income, business per employee or resilience.
+- The full seven-dimension fundamental IBPI and separate investment index are **not calculated**.
+- Market-cap values in the existing dataset remain provisional and are excluded from the pilot.
+- The pilot is relative to its cohort; changing cohort or weights changes scores.
 
 ## Sources
 
-See the dashboard's Sources & Data section for RBI, DFS and bank investor-relations repositories. This project is independent research and is not investment advice.
+Primary source for FY25 and FY26 PSB net profit and CRAR: [Department of Financial Services – Banking Analytics](https://www.financialservices.gov.in/banking-analytics). The dashboard reproduces the published 12-bank table.
+
+Sector context: [PIB, 12 May 2026 – PSBs FY26 performance](https://www.pib.gov.in/PressReleasePage.aspx?PRID=2260203&lang=1&reg=6).
+
+## Deploy to GitHub Pages
+
+Keep `index.html` and the `data/` directory at repository root. Upload/replace `index.html`, `README.md`, and `data/banks.json`, then commit to `main`. GitHub Pages should redeploy automatically.
+
+## Files
+
+- `index.html` – responsive dashboard, including pilot scoring engine
+- `data/banks.json` – source observations, methodology, existing research profiles and scoring configuration
+
+This is independent research, not investment advice. The score is a limited pilot; do not treat it as a certified ranking of India's banks.
