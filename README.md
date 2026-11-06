@@ -1,20 +1,28 @@
 # India Banking Performance Index 2026 (IBPI)
 
-Static GitHub Pages dashboard built with HTML, CSS and vanilla JavaScript.
+A static, responsive GitHub Pages dashboard for exploring available Indian bank financial data. The interface provides metric-based rankings, listed-bank market-cap snapshot, multi-bank historical comparison, individual profiles, methodology, source register and CSV/JSON exports.
 
-## Deploy to GitHub Pages
-1. Create a public repository, suggested name: `india-banking-performance-index`.
-2. Upload `index.html`, the `data/` folder and this `README.md` to the repository root.
-3. In **Settings → Pages**, select **Deploy from a branch**.
-4. Select branch `main` and folder `/ (root)`, then Save.
-5. Open `https://aniketverse.github.io/india-banking-performance-index/` after Pages finishes deployment.
+## Deploy
+
+1. Keep `index.html` and the `data/` folder at repository root.
+2. In GitHub, open **Settings → Pages**.
+3. Select **Deploy from a branch**, branch `main`, folder `/ (root)` and Save.
+
+## Data status and important limitations
+
+This is a research prototype using a partial dataset transcribed from a research exchange. It is **not** a completed or certified Top 50 ranking. No overall composite scores are calculated. Market-cap values and several bank-year observations require independent reconciliation to source documents before analytical or investment use. Missing values are not imputed as zero.
+
+The current profile set is limited to banks for which historical observations were supplied. The rankings view ranks only available observations for the selected metric. Peer groups, merger restatements, standalone/consolidated basis and domestic/global reporting scope must be reconciled before cross-bank scoring.
 
 ## Files
-- `index.html` – responsive dashboard and visualisations.
-- `data/banks.json` – bank-level data, profiles, methodology and source register.
 
-## Data status
-This is a research prototype populated with the partial FY26 dataset transcribed from the preceding research conversation. It deliberately does **not** publish an overall Top 50 ranking or composite scores. Several values and market-cap figures require independent reconciliation against the linked annual reports, RBI/DFS datasets and NSE/BSE historical data. Do not use the current market snapshot for investment decisions.
+- `index.html` — dashboard UI and client-side visualisations
+- `data/banks.json` — current data extract, weights, caveats and source register
 
 ## Updating data
-Edit `data/banks.json`. Keep the JSON valid. Do not replace missing values with zero. Add a source URL and precise report/table/page reference for every newly verified metric. For a certified ranking, reconcile all eligible scheduled commercial banks across FY22–FY26, adjust mergers, standardise standalone Indian operations, and document missing-data treatment.
+
+Edit `data/banks.json` while preserving valid JSON. Add exact source URLs and page/table references for each bank-year metric in the next data release. Do not publish a composite rank until the eligible universe has passed data completeness and reconciliation checks.
+
+## Sources
+
+See the dashboard's Sources & Data section for RBI, DFS and bank investor-relations repositories. This project is independent research and is not investment advice.
