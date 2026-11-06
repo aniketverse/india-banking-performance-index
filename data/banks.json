@@ -5,51 +5,1006 @@
     "financialYear": "FY 2025-26",
     "historicalPeriod": "FY 2021-22 to FY 2025-26",
     "marketDate": "4 November 2026 (figures transcribed from the research conversation; independently revalidation required)",
-    "status": "Research dashboard / partial verified dataset",
-    "disclaimer": "This release is a transparent research prototype, not a completed or certified Top 50 composite ranking. Overall scores and ranks are intentionally withheld until all eligible banks have comparable, reconciled five-year audited data.",
+    "status": "V3 research release: PSB three-factor pilot score calculated; full all-bank IBPI pending",
+    "disclaimer": "A calculated three-factor pilot score is provided for the 12 public-sector banks only. It is not the complete India Banking Performance Index and must not be compared across bank categories. Full fundamental and investment scores remain unpublished pending comparable audited data for the eligible universe.",
     "currency": "INR",
     "sources": [
-      {"name":"Reserve Bank of India – Database on Indian Economy (DBIE)","url":"https://dbie.rbi.org.in/DBIE/dbie.rbi?site=home","use":"Scheduled commercial bank aggregates and bank-wise statistical series."},
-      {"name":"RBI – Statistical Tables Relating to Banks in India","url":"https://www.rbi.org.in/Scripts/AnnualPublications.aspx?head=Statistical%20Tables%20Relating%20to%20Banks%20in%20India","use":"Bank-wise balance-sheet and banking statistics; use the latest available release and document reporting-period differences."},
-      {"name":"Department of Financial Services – Banking Analytics","url":"https://financialservices.gov.in/","use":"Public-sector bank comparative financial and operating indicators."},
-      {"name":"SBI – Financial Results and Annual Reports","url":"https://sbi.co.in/web/investor-relations/annual-reports","use":"Five-year financial highlights used for the SBI trend profile."},
-      {"name":"Bank of Maharashtra – Annual Reports","url":"https://bankofmaharashtra.bank.in/annual-reports","use":"Five-year business, profitability and asset-quality profile."},
-      {"name":"Kotak Mahindra Bank – Investor Relations","url":"https://www.kotak.com/en/investor-relations/financial-results.html","use":"Five-year balance-sheet and profitability profile."},
-      {"name":"Indian Bank – Annual Reports","url":"https://indianbank.bank.in/annual-reports/","use":"Five-year business, profitability and asset-quality profile."},
-      {"name":"AU Small Finance Bank – Investor Relations","url":"https://www.au.bank.in/investor-relations","use":"Five-year balance-sheet and operating profile; merger effects require adjustment."},
-      {"name":"Axis Bank – Investor Relations","url":"https://www.axisbank.com/shareholders-corner/annual-reports","use":"Five-year balance-sheet profile."},
-      {"name":"HDFC Bank – Investor Relations","url":"https://www.hdfcbank.com/personal/about-us/investor-relations/annual-reports","use":"FY24–FY26 balance-sheet and operating indicators; merger comparability caveat."}
+      {
+        "name": "Reserve Bank of India – Database on Indian Economy (DBIE)",
+        "url": "https://dbie.rbi.org.in/DBIE/dbie.rbi?site=home",
+        "use": "Scheduled commercial bank aggregates and bank-wise statistical series."
+      },
+      {
+        "name": "RBI – Statistical Tables Relating to Banks in India",
+        "url": "https://www.rbi.org.in/Scripts/AnnualPublications.aspx?head=Statistical%20Tables%20Relating%20to%20Banks%20in%20India",
+        "use": "Bank-wise balance-sheet and banking statistics; use the latest available release and document reporting-period differences."
+      },
+      {
+        "name": "Department of Financial Services – Banking Analytics",
+        "url": "https://financialservices.gov.in/",
+        "use": "Public-sector bank comparative financial and operating indicators."
+      },
+      {
+        "name": "SBI – Financial Results and Annual Reports",
+        "url": "https://sbi.co.in/web/investor-relations/annual-reports",
+        "use": "Five-year financial highlights used for the SBI trend profile."
+      },
+      {
+        "name": "Bank of Maharashtra – Annual Reports",
+        "url": "https://bankofmaharashtra.bank.in/annual-reports",
+        "use": "Five-year business, profitability and asset-quality profile."
+      },
+      {
+        "name": "Kotak Mahindra Bank – Investor Relations",
+        "url": "https://www.kotak.com/en/investor-relations/financial-results.html",
+        "use": "Five-year balance-sheet and profitability profile."
+      },
+      {
+        "name": "Indian Bank – Annual Reports",
+        "url": "https://indianbank.bank.in/annual-reports/",
+        "use": "Five-year business, profitability and asset-quality profile."
+      },
+      {
+        "name": "AU Small Finance Bank – Investor Relations",
+        "url": "https://www.au.bank.in/investor-relations",
+        "use": "Five-year balance-sheet and operating profile; merger effects require adjustment."
+      },
+      {
+        "name": "Axis Bank – Investor Relations",
+        "url": "https://www.axisbank.com/shareholders-corner/annual-reports",
+        "use": "Five-year balance-sheet profile."
+      },
+      {
+        "name": "HDFC Bank – Investor Relations",
+        "url": "https://www.hdfcbank.com/personal/about-us/investor-relations/annual-reports",
+        "use": "FY24–FY26 balance-sheet and operating indicators; merger comparability caveat."
+      }
     ]
   },
   "psuBanks": [
-    {"name":"State Bank of India","short":"SBI","category":"Public Sector","profit":80032,"crar":15.40,"deposits":59.76,"advances":48.78,"business":108.54,"businessUnit":"₹ lakh crore","notes":"FY26 values; total business recomputed as deposits plus advances."},
-    {"name":"Bank of Baroda","short":"BoB","category":"Public Sector","profit":20021,"crar":15.82,"deposits":16.48,"advances":14.30,"business":30.78,"businessUnit":"₹ lakh crore"},
-    {"name":"Punjab National Bank","short":"PNB","category":"Public Sector","profit":16904,"crar":17.74,"deposits":17.11,"advances":12.59,"business":29.70,"businessUnit":"₹ lakh crore"},
-    {"name":"Canara Bank","short":"Canara","category":"Public Sector","profit":19187,"crar":17.04,"deposits":15.69,"advances":12.38,"business":28.07,"businessUnit":"₹ lakh crore","notes":"Business recomputed from rounded deposits and advances."},
-    {"name":"Union Bank of India","short":"Union Bank","category":"Public Sector","profit":18697,"crar":18.10,"business":23.86,"businessUnit":"₹ lakh crore","notes":"Business figure from the preceding research summary; component reconciliation pending."},
-    {"name":"Bank of India","short":"BoI","category":"Public Sector","profit":10527,"crar":18.01,"deposits":9.27,"advances":7.71,"business":16.98,"businessUnit":"₹ lakh crore"},
-    {"name":"Indian Bank","short":"Indian Bank","category":"Public Sector","profit":12156,"crar":17.93,"deposits":8.28,"advances":6.67,"business":14.95,"businessUnit":"₹ lakh crore"},
-    {"name":"Central Bank of India","short":"Central Bank","category":"Public Sector","profit":4369,"crar":17.91,"business":8.12,"businessUnit":"₹ lakh crore","notes":"Business figure from the preceding research summary; component reconciliation pending."},
-    {"name":"Indian Overseas Bank","short":"IOB","category":"Public Sector","profit":5208,"crar":19.78,"business":6.79,"businessUnit":"₹ lakh crore","notes":"Business figure from the preceding research summary; component reconciliation pending."},
-    {"name":"Bank of Maharashtra","short":"BoM","category":"Public Sector","profit":7019,"crar":18.37,"deposits":3.50564,"advances":2.91967,"business":6.42531,"businessUnit":"₹ lakh crore"},
-    {"name":"UCO Bank","short":"UCO","category":"Public Sector","profit":2768,"crar":18.61,"business":5.90,"businessUnit":"₹ lakh crore","notes":"Business figure from the preceding research summary; component reconciliation pending."},
-    {"name":"Punjab & Sind Bank","short":"PSB","category":"Public Sector","profit":1322,"crar":17.42,"business":2.64,"businessUnit":"₹ lakh crore","notes":"Business figure from the preceding research summary; component reconciliation pending."}
+    {
+      "name": "State Bank of India",
+      "short": "SBI",
+      "category": "Public Sector",
+      "profit": 80032,
+      "crar": 15.4,
+      "deposits": 59.76,
+      "advances": 48.78,
+      "business": 108.54,
+      "businessUnit": "₹ lakh crore",
+      "notes": "FY26 values; total business recomputed as deposits plus advances."
+    },
+    {
+      "name": "Bank of Baroda",
+      "short": "BoB",
+      "category": "Public Sector",
+      "profit": 20021,
+      "crar": 15.82,
+      "deposits": 16.48,
+      "advances": 14.3,
+      "business": 30.78,
+      "businessUnit": "₹ lakh crore"
+    },
+    {
+      "name": "Punjab National Bank",
+      "short": "PNB",
+      "category": "Public Sector",
+      "profit": 16904,
+      "crar": 17.74,
+      "deposits": 17.11,
+      "advances": 12.59,
+      "business": 29.7,
+      "businessUnit": "₹ lakh crore"
+    },
+    {
+      "name": "Canara Bank",
+      "short": "Canara",
+      "category": "Public Sector",
+      "profit": 19187,
+      "crar": 17.04,
+      "deposits": 15.69,
+      "advances": 12.38,
+      "business": 28.07,
+      "businessUnit": "₹ lakh crore",
+      "notes": "Business recomputed from rounded deposits and advances."
+    },
+    {
+      "name": "Union Bank of India",
+      "short": "Union Bank",
+      "category": "Public Sector",
+      "profit": 18697,
+      "crar": 18.1,
+      "business": 23.86,
+      "businessUnit": "₹ lakh crore",
+      "notes": "Business figure from the preceding research summary; component reconciliation pending."
+    },
+    {
+      "name": "Bank of India",
+      "short": "BoI",
+      "category": "Public Sector",
+      "profit": 10527,
+      "crar": 18.01,
+      "deposits": 9.27,
+      "advances": 7.71,
+      "business": 16.98,
+      "businessUnit": "₹ lakh crore"
+    },
+    {
+      "name": "Indian Bank",
+      "short": "Indian Bank",
+      "category": "Public Sector",
+      "profit": 12156,
+      "crar": 17.93,
+      "deposits": 8.28,
+      "advances": 6.67,
+      "business": 14.95,
+      "businessUnit": "₹ lakh crore"
+    },
+    {
+      "name": "Central Bank of India",
+      "short": "Central Bank",
+      "category": "Public Sector",
+      "profit": 4369,
+      "crar": 17.91,
+      "business": 8.12,
+      "businessUnit": "₹ lakh crore",
+      "notes": "Business figure from the preceding research summary; component reconciliation pending."
+    },
+    {
+      "name": "Indian Overseas Bank",
+      "short": "IOB",
+      "category": "Public Sector",
+      "profit": 5208,
+      "crar": 19.78,
+      "business": 6.79,
+      "businessUnit": "₹ lakh crore",
+      "notes": "Business figure from the preceding research summary; component reconciliation pending."
+    },
+    {
+      "name": "Bank of Maharashtra",
+      "short": "BoM",
+      "category": "Public Sector",
+      "profit": 7019,
+      "crar": 18.37,
+      "deposits": 3.50564,
+      "advances": 2.91967,
+      "business": 6.42531,
+      "businessUnit": "₹ lakh crore"
+    },
+    {
+      "name": "UCO Bank",
+      "short": "UCO",
+      "category": "Public Sector",
+      "profit": 2768,
+      "crar": 18.61,
+      "business": 5.9,
+      "businessUnit": "₹ lakh crore",
+      "notes": "Business figure from the preceding research summary; component reconciliation pending."
+    },
+    {
+      "name": "Punjab & Sind Bank",
+      "short": "PSB",
+      "category": "Public Sector",
+      "profit": 1322,
+      "crar": 17.42,
+      "business": 2.64,
+      "businessUnit": "₹ lakh crore",
+      "notes": "Business figure from the preceding research summary; component reconciliation pending."
+    }
   ],
   "marketCap": [
-    {"rank":1,"name":"HDFC Bank","cap":1136562},{"rank":2,"name":"ICICI Bank","cap":1022643},{"rank":3,"name":"State Bank of India","cap":903692},{"rank":4,"name":"Kotak Mahindra Bank","cap":457005},{"rank":5,"name":"Axis Bank","cap":383654},{"rank":6,"name":"Punjab National Bank","cap":140697},{"rank":7,"name":"Union Bank of India","cap":140374},{"rank":8,"name":"Bank of Baroda","cap":126890},{"rank":9,"name":"Indian Bank","cap":115031},{"rank":10,"name":"Canara Bank","cap":107324},{"rank":11,"name":"IDBI Bank","cap":85256},{"rank":12,"name":"Federal Bank","cap":82895},{"rank":13,"name":"AU Small Finance Bank","cap":67986},{"rank":14,"name":"IndusInd Bank","cap":67407},{"rank":15,"name":"IDFC FIRST Bank","cap":64454},{"rank":16,"name":"Bank of Maharashtra","cap":61232},{"rank":17,"name":"Bank of India","cap":60960},{"rank":18,"name":"Indian Overseas Bank","cap":57769},{"rank":19,"name":"RBL Bank","cap":56639},{"rank":20,"name":"YES Bank","cap":49376}
+    {
+      "rank": 1,
+      "name": "HDFC Bank",
+      "cap": 1136562
+    },
+    {
+      "rank": 2,
+      "name": "ICICI Bank",
+      "cap": 1022643
+    },
+    {
+      "rank": 3,
+      "name": "State Bank of India",
+      "cap": 903692
+    },
+    {
+      "rank": 4,
+      "name": "Kotak Mahindra Bank",
+      "cap": 457005
+    },
+    {
+      "rank": 5,
+      "name": "Axis Bank",
+      "cap": 383654
+    },
+    {
+      "rank": 6,
+      "name": "Punjab National Bank",
+      "cap": 140697
+    },
+    {
+      "rank": 7,
+      "name": "Union Bank of India",
+      "cap": 140374
+    },
+    {
+      "rank": 8,
+      "name": "Bank of Baroda",
+      "cap": 126890
+    },
+    {
+      "rank": 9,
+      "name": "Indian Bank",
+      "cap": 115031
+    },
+    {
+      "rank": 10,
+      "name": "Canara Bank",
+      "cap": 107324
+    },
+    {
+      "rank": 11,
+      "name": "IDBI Bank",
+      "cap": 85256
+    },
+    {
+      "rank": 12,
+      "name": "Federal Bank",
+      "cap": 82895
+    },
+    {
+      "rank": 13,
+      "name": "AU Small Finance Bank",
+      "cap": 67986
+    },
+    {
+      "rank": 14,
+      "name": "IndusInd Bank",
+      "cap": 67407
+    },
+    {
+      "rank": 15,
+      "name": "IDFC FIRST Bank",
+      "cap": 64454
+    },
+    {
+      "rank": 16,
+      "name": "Bank of Maharashtra",
+      "cap": 61232
+    },
+    {
+      "rank": 17,
+      "name": "Bank of India",
+      "cap": 60960
+    },
+    {
+      "rank": 18,
+      "name": "Indian Overseas Bank",
+      "cap": 57769
+    },
+    {
+      "rank": 19,
+      "name": "RBL Bank",
+      "cap": 56639
+    },
+    {
+      "rank": 20,
+      "name": "YES Bank",
+      "cap": 49376
+    }
   ],
   "profiles": [
-    {"name":"State Bank of India","category":"Public Sector","unit":"₹ lakh crore except profit and ratios","years":["FY22","FY23","FY24","FY25","FY26"],"assets":[49.88,55.17,61.80,66.76,76.23],"deposits":[40.52,44.24,49.16,53.82,59.76],"advances":[27.34,31.99,37.04,41.63,48.78],"profit":[31676,50232,61077,70901,80032],"roa":[0.67,0.96,1.04,1.10,1.12],"roe":[13.92,19.43,20.32,19.87,18.57],"gnpa":[3.97,2.78,2.24,1.82,1.49],"nnpa":[1.02,0.67,0.57,0.47,0.39],"crar":[13.83,14.68,14.28,14.25,15.40]},
-    {"name":"Bank of Maharashtra","category":"Public Sector","unit":"₹ crore except ratios","years":["FY22","FY23","FY24","FY25","FY26"],"deposits":[202294,234083,270747,307143,350564],"advances":[135240,175120,203664,239837,291967],"business":[337534,409202,474411,546979,642531],"profit":[1152,2602,4055,5520,7019],"roa":[0.55,1.10,1.50,1.75,1.86],"gnpa":[3.94,2.47,1.88,1.74,1.45],"nnpa":[0.97,0.25,0.20,0.18,0.13],"crar":[16.48,18.14,17.38,20.53,18.37]},
-    {"name":"Indian Bank","category":"Public Sector","unit":"₹ crore except ratios","years":["FY22","FY23","FY24","FY25","FY26"],"business":[1009243,1094752,1221773,1325294,1494839],"deposits":[593618,621166,688000,737154,827726],"advances":[415625,473586,533773,588140,667113],"profit":[3945,5282,8063,10918,12156],"roa":[0.63,0.77,1.07,1.32,1.31],"gnpa":[8.47,5.95,3.95,3.09,1.98],"nnpa":[2.27,0.90,0.43,0.19,0.15],"crar":[16.53,16.49,16.44,17.94,17.93]},
-    {"name":"Kotak Mahindra Bank","category":"Private Sector","unit":"₹ crore","years":["FY22","FY23","FY24","FY25","FY26"],"assets":[429428,489862,600357,693624,783003],"deposits":[311684,363096,448954,499055,572456],"advances":[271254,319861,376075,426909,496009],"netInterestIncome":[16818,21552,25993,28342,30010],"profit":[8573,10939,13782,13720,14008]},
-    {"name":"Axis Bank","category":"Private Sector","unit":"₹ crore","years":["FY22","FY23","FY24","FY25","FY26"],"assets":[1175429,1317326,1477209,1609930,1886850],"deposits":[821721,946945,1068641,1172952,1335834],"advances":[707947,845303,965068,1040811,1233570]},
-    {"name":"AU Small Finance Bank","category":"Small Finance Bank","unit":"₹ crore except ratios","years":["FY22","FY23","FY24","FY25","FY26"],"assets":[69078,90216,109426,157846,191797],"deposits":[52585,69365,87182,124269,152661],"advances":[46789,59158,73999,108778,136041],"profit":[1130,1428,1535,2106,2641],"roa":[1.9,1.8,1.5,1.5,1.6],"roe":[16.4,15.4,13.0,13.1,14.2],"gnpa":[2.0,1.7,1.7,2.3,2.0],"nnpa":[0.5,0.4,0.5,0.7,0.7],"crar":[21.0,23.6,20.1,20.1,18.7],"notes":"FY24 onward reflects the Fincare merger; organic growth comparisons require adjustment."},
-    {"name":"HDFC Bank","category":"Private Sector","unit":"₹ crore except ratios","years":["FY24","FY25","FY26"],"assets":[3617623,3910199,4364886],"deposits":[2379786,2714715,3105250],"gnpa":[1.24,1.33,1.15],"nim":[null,null,3.34],"costIncome":[40.2,40.5,38.0],"roe":[null,null,14.3],"crar":[null,null,19.7],"notes":"FY22–FY23 comparability is affected by the HDFC Ltd merger; series intentionally starts FY24."}
+    {
+      "name": "State Bank of India",
+      "category": "Public Sector",
+      "unit": "₹ lakh crore except profit and ratios",
+      "years": [
+        "FY22",
+        "FY23",
+        "FY24",
+        "FY25",
+        "FY26"
+      ],
+      "assets": [
+        49.88,
+        55.17,
+        61.8,
+        66.76,
+        76.23
+      ],
+      "deposits": [
+        40.52,
+        44.24,
+        49.16,
+        53.82,
+        59.76
+      ],
+      "advances": [
+        27.34,
+        31.99,
+        37.04,
+        41.63,
+        48.78
+      ],
+      "profit": [
+        31676,
+        50232,
+        61077,
+        70901,
+        80032
+      ],
+      "roa": [
+        0.67,
+        0.96,
+        1.04,
+        1.1,
+        1.12
+      ],
+      "roe": [
+        13.92,
+        19.43,
+        20.32,
+        19.87,
+        18.57
+      ],
+      "gnpa": [
+        3.97,
+        2.78,
+        2.24,
+        1.82,
+        1.49
+      ],
+      "nnpa": [
+        1.02,
+        0.67,
+        0.57,
+        0.47,
+        0.39
+      ],
+      "crar": [
+        13.83,
+        14.68,
+        14.28,
+        14.25,
+        15.4
+      ]
+    },
+    {
+      "name": "Bank of Maharashtra",
+      "category": "Public Sector",
+      "unit": "₹ crore except ratios",
+      "years": [
+        "FY22",
+        "FY23",
+        "FY24",
+        "FY25",
+        "FY26"
+      ],
+      "deposits": [
+        202294,
+        234083,
+        270747,
+        307143,
+        350564
+      ],
+      "advances": [
+        135240,
+        175120,
+        203664,
+        239837,
+        291967
+      ],
+      "business": [
+        337534,
+        409202,
+        474411,
+        546979,
+        642531
+      ],
+      "profit": [
+        1152,
+        2602,
+        4055,
+        5520,
+        7019
+      ],
+      "roa": [
+        0.55,
+        1.1,
+        1.5,
+        1.75,
+        1.86
+      ],
+      "gnpa": [
+        3.94,
+        2.47,
+        1.88,
+        1.74,
+        1.45
+      ],
+      "nnpa": [
+        0.97,
+        0.25,
+        0.2,
+        0.18,
+        0.13
+      ],
+      "crar": [
+        16.48,
+        18.14,
+        17.38,
+        20.53,
+        18.37
+      ]
+    },
+    {
+      "name": "Indian Bank",
+      "category": "Public Sector",
+      "unit": "₹ crore except ratios",
+      "years": [
+        "FY22",
+        "FY23",
+        "FY24",
+        "FY25",
+        "FY26"
+      ],
+      "business": [
+        1009243,
+        1094752,
+        1221773,
+        1325294,
+        1494839
+      ],
+      "deposits": [
+        593618,
+        621166,
+        688000,
+        737154,
+        827726
+      ],
+      "advances": [
+        415625,
+        473586,
+        533773,
+        588140,
+        667113
+      ],
+      "profit": [
+        3945,
+        5282,
+        8063,
+        10918,
+        12156
+      ],
+      "roa": [
+        0.63,
+        0.77,
+        1.07,
+        1.32,
+        1.31
+      ],
+      "gnpa": [
+        8.47,
+        5.95,
+        3.95,
+        3.09,
+        1.98
+      ],
+      "nnpa": [
+        2.27,
+        0.9,
+        0.43,
+        0.19,
+        0.15
+      ],
+      "crar": [
+        16.53,
+        16.49,
+        16.44,
+        17.94,
+        17.93
+      ]
+    },
+    {
+      "name": "Kotak Mahindra Bank",
+      "category": "Private Sector",
+      "unit": "₹ crore",
+      "years": [
+        "FY22",
+        "FY23",
+        "FY24",
+        "FY25",
+        "FY26"
+      ],
+      "assets": [
+        429428,
+        489862,
+        600357,
+        693624,
+        783003
+      ],
+      "deposits": [
+        311684,
+        363096,
+        448954,
+        499055,
+        572456
+      ],
+      "advances": [
+        271254,
+        319861,
+        376075,
+        426909,
+        496009
+      ],
+      "netInterestIncome": [
+        16818,
+        21552,
+        25993,
+        28342,
+        30010
+      ],
+      "profit": [
+        8573,
+        10939,
+        13782,
+        13720,
+        14008
+      ]
+    },
+    {
+      "name": "Axis Bank",
+      "category": "Private Sector",
+      "unit": "₹ crore",
+      "years": [
+        "FY22",
+        "FY23",
+        "FY24",
+        "FY25",
+        "FY26"
+      ],
+      "assets": [
+        1175429,
+        1317326,
+        1477209,
+        1609930,
+        1886850
+      ],
+      "deposits": [
+        821721,
+        946945,
+        1068641,
+        1172952,
+        1335834
+      ],
+      "advances": [
+        707947,
+        845303,
+        965068,
+        1040811,
+        1233570
+      ]
+    },
+    {
+      "name": "AU Small Finance Bank",
+      "category": "Small Finance Bank",
+      "unit": "₹ crore except ratios",
+      "years": [
+        "FY22",
+        "FY23",
+        "FY24",
+        "FY25",
+        "FY26"
+      ],
+      "assets": [
+        69078,
+        90216,
+        109426,
+        157846,
+        191797
+      ],
+      "deposits": [
+        52585,
+        69365,
+        87182,
+        124269,
+        152661
+      ],
+      "advances": [
+        46789,
+        59158,
+        73999,
+        108778,
+        136041
+      ],
+      "profit": [
+        1130,
+        1428,
+        1535,
+        2106,
+        2641
+      ],
+      "roa": [
+        1.9,
+        1.8,
+        1.5,
+        1.5,
+        1.6
+      ],
+      "roe": [
+        16.4,
+        15.4,
+        13.0,
+        13.1,
+        14.2
+      ],
+      "gnpa": [
+        2.0,
+        1.7,
+        1.7,
+        2.3,
+        2.0
+      ],
+      "nnpa": [
+        0.5,
+        0.4,
+        0.5,
+        0.7,
+        0.7
+      ],
+      "crar": [
+        21.0,
+        23.6,
+        20.1,
+        20.1,
+        18.7
+      ],
+      "notes": "FY24 onward reflects the Fincare merger; organic growth comparisons require adjustment."
+    },
+    {
+      "name": "HDFC Bank",
+      "category": "Private Sector",
+      "unit": "₹ crore except ratios",
+      "years": [
+        "FY24",
+        "FY25",
+        "FY26"
+      ],
+      "assets": [
+        3617623,
+        3910199,
+        4364886
+      ],
+      "deposits": [
+        2379786,
+        2714715,
+        3105250
+      ],
+      "gnpa": [
+        1.24,
+        1.33,
+        1.15
+      ],
+      "nim": [
+        null,
+        null,
+        3.34
+      ],
+      "costIncome": [
+        40.2,
+        40.5,
+        38.0
+      ],
+      "roe": [
+        null,
+        null,
+        14.3
+      ],
+      "crar": [
+        null,
+        null,
+        19.7
+      ],
+      "notes": "FY22–FY23 comparability is affected by the HDFC Ltd merger; series intentionally starts FY24."
+    }
   ],
   "methodology": {
-    "fundamentalWeights":[{"name":"Banking scale","weight":20,"detail":"Assets, deposits and gross advances; log-scaled to limit size domination."},{"name":"Profitability","weight":20,"detail":"ROA, ROE, NIM and sustainable profit generation."},{"name":"Growth","weight":15,"detail":"Three-year and five-year CAGR, with merger adjustments."},{"name":"Asset quality","weight":15,"detail":"GNPA, NNPA, PCR, slippages and credit cost."},{"name":"Capital and liquidity","weight":10,"detail":"CRAR, CET1, Tier I and liquidity indicators."},{"name":"Operational efficiency","weight":10,"detail":"Cost-to-income and business/profit per employee."},{"name":"Resilience and disclosure quality","weight":10,"detail":"Earnings stability, concentration, provisioning and data completeness."}],
-    "investmentWeights":[{"name":"Fundamental score","weight":70},{"name":"Valuation","weight":15},{"name":"Shareholder returns","weight":15}],
-    "rules":["Use standalone Indian banking operations for the primary comparison; disclose consolidated figures separately.","Use audited FY22–FY26 data and reconcile restatements and mergers.","Use peer-group percentile normalisation; do not compare payments banks directly with universal banks.","Use the same market-cap valuation date for every listed bank.","Do not impute missing financial metrics as zero.","Do not publish a composite rank until all required inputs pass completeness and reconciliation checks."]
+    "fundamentalWeights": [
+      {
+        "name": "Banking scale",
+        "weight": 20,
+        "detail": "Assets, deposits and gross advances; log-scaled to limit size domination."
+      },
+      {
+        "name": "Profitability",
+        "weight": 20,
+        "detail": "ROA, ROE, NIM and sustainable profit generation."
+      },
+      {
+        "name": "Growth",
+        "weight": 15,
+        "detail": "Three-year and five-year CAGR, with merger adjustments."
+      },
+      {
+        "name": "Asset quality",
+        "weight": 15,
+        "detail": "GNPA, NNPA, PCR, slippages and credit cost."
+      },
+      {
+        "name": "Capital and liquidity",
+        "weight": 10,
+        "detail": "CRAR, CET1, Tier I and liquidity indicators."
+      },
+      {
+        "name": "Operational efficiency",
+        "weight": 10,
+        "detail": "Cost-to-income and business/profit per employee."
+      },
+      {
+        "name": "Resilience and disclosure quality",
+        "weight": 10,
+        "detail": "Earnings stability, concentration, provisioning and data completeness."
+      }
+    ],
+    "investmentWeights": [
+      {
+        "name": "Fundamental score",
+        "weight": 70
+      },
+      {
+        "name": "Valuation",
+        "weight": 15
+      },
+      {
+        "name": "Shareholder returns",
+        "weight": 15
+      }
+    ],
+    "rules": [
+      "Use standalone Indian banking operations for the primary comparison; disclose consolidated figures separately.",
+      "Use audited FY22–FY26 data and reconcile restatements and mergers.",
+      "Use peer-group percentile normalisation; do not compare payments banks directly with universal banks.",
+      "Use the same market-cap valuation date for every listed bank.",
+      "Do not impute missing financial metrics as zero.",
+      "Do not publish a composite rank until all required inputs pass completeness and reconciliation checks."
+    ]
+  },
+  "psbPilotIndex": {
+    "name": "PSB FY26 Three-Factor Pilot Score",
+    "status": "Calculated pilot; not the full IBPI",
+    "cohort": "12 Indian public-sector banks only",
+    "asOf": "31 March 2026",
+    "source": "Department of Financial Services, Government of India – Banking Analytics",
+    "sourceUrl": "https://www.financialservices.gov.in/banking-analytics",
+    "method": "Each metric is converted to a percentile rank within the 12-bank PSB cohort. Higher values receive higher percentiles. Ties receive average ranks. The weighted contributions are summed to 100.",
+    "weights": [
+      {
+        "key": "netProfitFY26",
+        "name": "FY26 net profit (earnings scale)",
+        "weight": 40,
+        "direction": "higher",
+        "unit": "₹ crore",
+        "caveat": "Absolute net profit measures earnings scale, not profitability efficiency."
+      },
+      {
+        "key": "crarFY26",
+        "name": "FY26 CRAR",
+        "weight": 30,
+        "direction": "higher",
+        "unit": "%",
+        "caveat": "Capital adequacy is a regulatory capital-buffer measure."
+      },
+      {
+        "key": "netProfitGrowth",
+        "name": "FY26 net profit growth vs FY25",
+        "weight": 30,
+        "direction": "higher",
+        "unit": "%",
+        "caveat": "One-year growth only; not a 3-year or 5-year CAGR."
+      }
+    ],
+    "observations": [
+      {
+        "name": "Bank of Baroda",
+        "short": "BoB",
+        "netProfitFY25": 19581,
+        "netProfitFY26": 20021,
+        "crarFY25": 17.19,
+        "crarFY26": 15.82,
+        "netProfitGrowth": 2.2471,
+        "components": {
+          "netProfitFY26": 36.36363636363636,
+          "crarFY26": 2.7272727272727275,
+          "netProfitGrowth": 2.7272727272727275
+        },
+        "score": 41.81818181818181,
+        "rank": 10
+      },
+      {
+        "name": "Bank of India",
+        "short": "BoI",
+        "netProfitFY25": 9219,
+        "netProfitFY26": 10527,
+        "crarFY25": 17.77,
+        "crarFY26": 18.01,
+        "netProfitGrowth": 14.1881,
+        "components": {
+          "netProfitFY26": 18.18181818181818,
+          "crarFY26": 19.09090909090909,
+          "netProfitGrowth": 19.09090909090909
+        },
+        "score": 56.36363636363636,
+        "rank": 3
+      },
+      {
+        "name": "Bank of Maharashtra",
+        "short": "BoM",
+        "netProfitFY25": 5520,
+        "netProfitFY26": 7019,
+        "crarFY25": 20.53,
+        "crarFY26": 18.37,
+        "netProfitGrowth": 27.1558,
+        "components": {
+          "netProfitFY26": 14.545454545454547,
+          "crarFY26": 24.54545454545455,
+          "netProfitGrowth": 24.54545454545455
+        },
+        "score": 63.63636363636365,
+        "rank": 2
+      },
+      {
+        "name": "Canara Bank",
+        "short": "Canara",
+        "netProfitFY25": 17027,
+        "netProfitFY26": 19187,
+        "crarFY25": 16.33,
+        "crarFY26": 17.04,
+        "netProfitGrowth": 12.6857,
+        "components": {
+          "netProfitFY26": 32.72727272727273,
+          "crarFY26": 5.454545454545455,
+          "netProfitGrowth": 10.90909090909091
+        },
+        "score": 49.09090909090909,
+        "rank": 6
+      },
+      {
+        "name": "Central Bank of India",
+        "short": "CBI",
+        "netProfitFY25": 3785,
+        "netProfitFY26": 4369,
+        "crarFY25": 17.02,
+        "crarFY26": 17.91,
+        "netProfitGrowth": 15.4293,
+        "components": {
+          "netProfitFY26": 7.272727272727273,
+          "crarFY26": 13.636363636363635,
+          "netProfitGrowth": 21.81818181818182
+        },
+        "score": 42.72727272727273,
+        "rank": 9
+      },
+      {
+        "name": "Indian Bank",
+        "short": "Indian Bank",
+        "netProfitFY25": 10918,
+        "netProfitFY26": 12156,
+        "crarFY25": 17.94,
+        "crarFY26": 17.93,
+        "netProfitGrowth": 11.3391,
+        "components": {
+          "netProfitFY26": 21.818181818181817,
+          "crarFY26": 16.363636363636363,
+          "netProfitGrowth": 8.181818181818182
+        },
+        "score": 46.36363636363636,
+        "rank": 8
+      },
+      {
+        "name": "Indian Overseas Bank",
+        "short": "IOB",
+        "netProfitFY25": 3335,
+        "netProfitFY26": 5208,
+        "crarFY25": 19.74,
+        "crarFY26": 19.78,
+        "netProfitGrowth": 56.1619,
+        "components": {
+          "netProfitFY26": 10.909090909090908,
+          "crarFY26": 30.0,
+          "netProfitGrowth": 30.0
+        },
+        "score": 70.9090909090909,
+        "rank": 1
+      },
+      {
+        "name": "Punjab & Sind Bank",
+        "short": "PSB",
+        "netProfitFY25": 1016,
+        "netProfitFY26": 1322,
+        "crarFY25": 17.41,
+        "crarFY26": 17.42,
+        "netProfitGrowth": 30.1181,
+        "components": {
+          "netProfitFY26": 0.0,
+          "crarFY26": 8.181818181818182,
+          "netProfitGrowth": 27.27272727272727
+        },
+        "score": 35.45454545454545,
+        "rank": 12
+      },
+      {
+        "name": "Punjab National Bank",
+        "short": "PNB",
+        "netProfitFY25": 16630,
+        "netProfitFY26": 16904,
+        "crarFY25": 17.01,
+        "crarFY26": 17.74,
+        "netProfitGrowth": 1.6476,
+        "components": {
+          "netProfitFY26": 25.454545454545453,
+          "crarFY26": 10.90909090909091,
+          "netProfitGrowth": 0.0
+        },
+        "score": 36.36363636363636,
+        "rank": 11
+      },
+      {
+        "name": "State Bank of India",
+        "short": "SBI",
+        "netProfitFY25": 70901,
+        "netProfitFY26": 80032,
+        "crarFY25": 14.25,
+        "crarFY26": 15.4,
+        "netProfitGrowth": 12.8785,
+        "components": {
+          "netProfitFY26": 40.0,
+          "crarFY26": 0.0,
+          "netProfitGrowth": 13.636363636363635
+        },
+        "score": 53.63636363636363,
+        "rank": 5
+      },
+      {
+        "name": "UCO Bank",
+        "short": "UCO",
+        "netProfitFY25": 2445,
+        "netProfitFY26": 2768,
+        "crarFY25": 18.49,
+        "crarFY26": 18.61,
+        "netProfitGrowth": 13.2106,
+        "components": {
+          "netProfitFY26": 3.6363636363636367,
+          "crarFY26": 27.27272727272727,
+          "netProfitGrowth": 16.363636363636363
+        },
+        "score": 47.272727272727266,
+        "rank": 7
+      },
+      {
+        "name": "Union Bank of India",
+        "short": "Union Bank",
+        "netProfitFY25": 17987,
+        "netProfitFY26": 18697,
+        "crarFY25": 18.02,
+        "crarFY26": 18.1,
+        "netProfitGrowth": 3.9473,
+        "components": {
+          "netProfitFY26": 29.090909090909093,
+          "crarFY26": 21.81818181818182,
+          "netProfitGrowth": 5.454545454545455
+        },
+        "score": 56.36363636363637,
+        "rank": 3
+      }
+    ],
+    "limitations": [
+      "This score is restricted to the 12 public-sector banks and is not comparable with private-sector banks or small finance banks.",
+      "The three-factor pilot is not the seven-dimension 100-point fundamental IBPI methodology.",
+      "Profit contribution uses absolute net profit; ROA, ROE, NIM and cost-to-income are not included in this pilot.",
+      "No asset-quality, five-year growth, liquidity, operational-efficiency or resilience variables enter this pilot score.",
+      "The investment index is not calculated. Market-cap values in the existing dataset remain provisional and are excluded.",
+      "Scores are relative to the PSB peer group; changing the cohort or weights will change the results."
+    ]
   }
 }
