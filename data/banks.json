@@ -5,8 +5,8 @@
     "financialYear": "FY 2025-26",
     "historicalPeriod": "FY 2021-22 to FY 2025-26",
     "marketDate": "4 November 2026 (figures transcribed from the research conversation; independently revalidation required)",
-    "status": "V3 research release: PSB three-factor pilot score calculated; full all-bank IBPI pending",
-    "disclaimer": "A calculated three-factor pilot score is provided for the 12 public-sector banks only. It is not the complete India Banking Performance Index and must not be compared across bank categories. Full fundamental and investment scores remain unpublished pending comparable audited data for the eligible universe.",
+    "status": "V4 research release: calculated PSB pilot plus expanded RBI-based bank-universe registry and client-side full-index scoring workbench",
+    "disclaimer": "The PSB three-factor pilot is calculated only within the 12-bank PSB cohort. The all-bank fundamental and investment rankings are not certified because the complete bank-wise audited input dataset and the common-date market dataset have not yet been reconciled. The data lab can calculate category-normalised scores from a completed input CSV.",
     "currency": "INR",
     "sources": [
       {
@@ -58,8 +58,51 @@
         "name": "HDFC Bank – Investor Relations",
         "url": "https://www.hdfcbank.com/personal/about-us/investor-relations/annual-reports",
         "use": "FY24–FY26 balance-sheet and operating indicators; merger comparability caveat."
+      },
+      {
+        "name": "RBI – Report on Trend and Progress of Banking in India 2024-25",
+        "url": "https://www.rbi.org.in/Scripts/PublicationsView.aspx?id=23639",
+        "use": "Official end-March 2025 bank-category universe, banking-sector structure and foreign-bank operations."
+      },
+      {
+        "name": "RBI – List of Scheduled Commercial Banks / bank directory",
+        "url": "https://systemhealth.rbi.org.in/Scripts/bs_viewcontent.aspx_Id%3D3657.html",
+        "use": "Scheduled public-sector, private-sector, small finance, payments and RRB bank categories; use current RBI master list for changes."
+      },
+      {
+        "name": "RBI – List of agency banks as at 4 August 2026",
+        "url": "https://m.rbi.org.in/CommonPerson/english/scripts/content.aspx?id=2139",
+        "use": "Current named public-sector and scheduled private-sector bank cross-check."
+      },
+      {
+        "name": "DFS – Banking Analytics (FY26)",
+        "url": "https://www.financialservices.gov.in/banking-analytics",
+        "use": "FY25 and FY26 bank-wise PSB net profit and CRAR; RBI-sourced banking aggregate indicators."
+      },
+      {
+        "name": "DFS – Banking Analytics search extract (FY26 aggregates)",
+        "url": "https://www.financialservices.gov.in/search?search_api_fulltext=banking%20analytics",
+        "use": "FY26 RBI-sourced scheduled-bank aggregate deposits and advances, plus category branch counts."
+      },
+      {
+        "name": "Axis Bank – Integrated Annual Report FY2025-26",
+        "url": "https://www.axis.bank.in/annual-reports/2025-2026/index.html",
+        "use": "Five-year standalone ROA, ROE, CRAR, Tier 1, PCR, GNPA and NNPA observations."
+      },
+      {
+        "name": "AU Small Finance Bank – Q4 FY26 investor presentation",
+        "url": "https://www.au.bank.in/pdfs/quaterly-reports/year-25/investors-presentation/Q4FY26-PPT.pdf",
+        "use": "FY26 net interest income, NIM, cost-to-income, GNPA, ROA, ROE, PCR, Tier I and CRAR."
+      },
+      {
+        "name": "ICICI Bank – Annual Report FY2025-26",
+        "url": "https://www.icici.bank.in/about-us/annual/2026",
+        "use": "Official FY26 annual report, Board report, management discussion and financial statements."
       }
-    ]
+    ],
+    "universeBaseline": "RBI Report on Trend and Progress of Banking in India 2024-25: 12 PSBs, 21 private sector banks, 11 SFBs and 44 foreign banks operating in India at end-March 2025. Domestic roster labels have been refreshed using RBI bank directory information available in 2026; foreign-bank count is the FY25 baseline.",
+    "release": "V4",
+    "lastUpdated": "2026-11-06"
   },
   "psuBanks": [
     {
@@ -368,7 +411,8 @@
         14.28,
         14.25,
         15.4
-      ]
+      ],
+      "sourceUrl": "https://sbi.co.in/web/investor-relations/sbi-financial-%20highlights-past-5"
     },
     {
       "name": "Bank of Maharashtra",
@@ -436,7 +480,8 @@
         17.38,
         20.53,
         18.37
-      ]
+      ],
+      "sourceUrl": "https://bankofmaharashtra.bank.in/annual-reports"
     },
     {
       "name": "Indian Bank",
@@ -504,7 +549,8 @@
         16.44,
         17.94,
         17.93
-      ]
+      ],
+      "sourceUrl": "https://indianbank.bank.in/annual-reports/"
     },
     {
       "name": "Kotak Mahindra Bank",
@@ -551,7 +597,8 @@
         13782,
         13720,
         14008
-      ]
+      ],
+      "sourceUrl": "https://www.kotak.com/en/investor-relations/financial-results.html"
     },
     {
       "name": "Axis Bank",
@@ -584,7 +631,58 @@
         965068,
         1040811,
         1233570
-      ]
+      ],
+      "roa": [
+        1.21,
+        1.82,
+        1.83,
+        1.74,
+        1.45
+      ],
+      "roe": [
+        12.91,
+        18.38,
+        18.86,
+        16.52,
+        13.15
+      ],
+      "crar": [
+        18.54,
+        17.64,
+        16.63,
+        17.07,
+        16.42
+      ],
+      "tier1": [
+        16.34,
+        14.57,
+        14.2,
+        14.67,
+        14.38
+      ],
+      "pcr": [
+        75,
+        81,
+        79,
+        75,
+        70
+      ],
+      "gnpa": [
+        2.82,
+        2.02,
+        1.43,
+        1.28,
+        1.23
+      ],
+      "nnpa": [
+        0.73,
+        0.39,
+        0.31,
+        0.33,
+        0.37
+      ],
+      "notes": "FY22-FY26 standalone metrics from Axis Bank Integrated Annual Report FY26. FY23 ROA/ROE are marked with an exceptional-item caveat in the report; use the report’s footnote when comparing.",
+      "sourceUrl": "https://www.axis.bank.in/annual-reports/2025-2026/index.html"
     },
     {
       "name": "AU Small Finance Bank",
@@ -643,15 +741,15 @@
         2.0,
         1.7,
         1.7,
-        2.3,
-        2.0
+        2.28,
+        2.03
       ],
       "nnpa": [
         0.5,
         0.4,
         0.5,
-        0.7,
-        0.7
+        0.74,
+        0.74
       ],
       "crar": [
         21.0,
@@ -660,7 +758,36 @@
         20.1,
         18.7
       ],
-      "notes": "FY24 onward reflects the Fincare merger; organic growth comparisons require adjustment."
+      "notes": "FY26 values from AU SFB Q4 FY26 investor presentation. FY24 includes the Fincare merger; growth across the merger requires pro-forma adjustment. FY25/FY26 GNPA, NNPA, PCR and Tier I/NIM/CIR are report-specific measures.",
+      "nim": [
+        null,
+        null,
+        null,
+        5.93,
+        5.65
+      ],
+      "costIncome": [
+        null,
+        null,
+        null,
+        56.5,
+        57.9
+      ],
+      "pcr": [
+        null,
+        null,
+        null,
+        84,
+        85
+      ],
+      "tier1": [
+        null,
+        null,
+        null,
+        18.1,
+        16.9
+      ],
+      "sourceUrl": "https://www.au.bank.in/pdfs/quaterly-reports/year-25/investors-presentation/Q4FY26-PPT.pdf"
     },
     {
       "name": "HDFC Bank",
@@ -706,7 +833,8 @@
         null,
         19.7
       ],
-      "notes": "FY22–FY23 comparability is affected by the HDFC Ltd merger; series intentionally starts FY24."
+      "notes": "FY22–FY23 comparability is affected by the HDFC Ltd merger; series intentionally starts FY24.",
+      "sourceUrl": "https://www.hdfcbank.com/personal/about-us/investor-relations/annual-reports"
     }
   ],
   "methodology": {
@@ -768,6 +896,15 @@
       "Use the same market-cap valuation date for every listed bank.",
       "Do not impute missing financial metrics as zero.",
       "Do not publish a composite rank until all required inputs pass completeness and reconciliation checks."
+    ],
+    "fullIndexRules": [
+      "Fundamental scores are calculated within comparable peer categories (PSB, domestic private sector, SFB and foreign India operations); cross-category comparisons require a separate size/context interpretation.",
+      "A bank must have at least one usable metric in each of the seven dimensions and at least 14 of 25 input indicators to receive a full fundamental score in the Data Lab.",
+      "For any metric, percentile normalisation is performed only within the bank category and only when at least three peers provide that metric.",
+      "Missing values are excluded from a metric/dimension average and never treated as zero. If a dimension has no valid peer-normalised inputs, the overall score is withheld.",
+      "All numeric input rows must disclose a source URL, report page/table, standalone vs consolidated basis, India-only vs global scope and merger/restatement notes.",
+      "Five-year growth fields are derived from FY22 and FY26 audited endpoints by the scoring engine when both endpoints are positive. Merger-affected series require a documented pro-forma adjustment.",
+      "Investment scores require a certified fundamental score plus same-date price/book, price/earnings and shareholder return data; the existing market-cap snapshot is not used to generate investment scores."
     ]
   },
   "psbPilotIndex": {
@@ -1004,7 +1141,403 @@
       "Profit contribution uses absolute net profit; ROA, ROE, NIM and cost-to-income are not included in this pilot.",
       "No asset-quality, five-year growth, liquidity, operational-efficiency or resilience variables enter this pilot score.",
       "The investment index is not calculated. Market-cap values in the existing dataset remain provisional and are excluded.",
-      "Scores are relative to the PSB peer group; changing the cohort or weights will change the results."
+      "Scores are relative to the PSB peer group; changing the cohort or weights will change the results.",
+      "The pilot is based on only three indicators and is not the final seven-dimension index.",
+      "The FY26 official DFS comparison is bank-wise for net profit and CRAR; FY25 values are included for one-year profit growth.",
+      "The final fundamental model must be applied within comparable bank categories and use audited source-backed data for the seven dimensions."
+    ]
+  },
+  "bankUniverse": {
+    "baselineDate": "31 March 2025 (RBI Report on Trend and Progress of Banking in India 2024-25); domestic bank names cross-checked to RBI directory pages available in 2026",
+    "domesticNamedCount": 44,
+    "categories": [
+      {
+        "name": "Public Sector Banks",
+        "count": 12,
+        "basis": "RBI bank list; post amalgamation"
+      },
+      {
+        "name": "Domestic Private Sector Banks",
+        "count": 21,
+        "basis": "RBI scheduled commercial bank list"
+      },
+      {
+        "name": "Small Finance Banks",
+        "count": 11,
+        "basis": "RBI scheduled small finance bank list"
+      }
+    ],
+    "foreignBankCount": 44,
+    "foreignBankCountAsOf": "31 March 2025",
+    "foreignBankNote": "44 foreign banks operated in India through branch/wholly-owned subsidiary mode at end-March 2025 in the RBI Trend and Progress report. Their full India-only entity roster and comparable FY26 metrics are not loaded in this release.",
+    "coreBaselineCount": 88,
+    "registry": [
+      {
+        "name": "State Bank of India",
+        "category": "Public Sector",
+        "cohort": "PSB",
+        "status": "FY25–FY26 net profit and CRAR; included in PSB pilot",
+        "pilotEligible": true,
+        "profileAvailable": true
+      },
+      {
+        "name": "Bank of Baroda",
+        "category": "Public Sector",
+        "cohort": "PSB",
+        "status": "FY25–FY26 net profit and CRAR; included in PSB pilot",
+        "pilotEligible": true,
+        "profileAvailable": false
+      },
+      {
+        "name": "Punjab National Bank",
+        "category": "Public Sector",
+        "cohort": "PSB",
+        "status": "FY25–FY26 net profit and CRAR; included in PSB pilot",
+        "pilotEligible": true,
+        "profileAvailable": false
+      },
+      {
+        "name": "Canara Bank",
+        "category": "Public Sector",
+        "cohort": "PSB",
+        "status": "FY25–FY26 net profit and CRAR; included in PSB pilot",
+        "pilotEligible": true,
+        "profileAvailable": false
+      },
+      {
+        "name": "Union Bank of India",
+        "category": "Public Sector",
+        "cohort": "PSB",
+        "status": "FY25–FY26 net profit and CRAR; included in PSB pilot",
+        "pilotEligible": true,
+        "profileAvailable": false
+      },
+      {
+        "name": "Bank of India",
+        "category": "Public Sector",
+        "cohort": "PSB",
+        "status": "FY25–FY26 net profit and CRAR; included in PSB pilot",
+        "pilotEligible": true,
+        "profileAvailable": false
+      },
+      {
+        "name": "Indian Bank",
+        "category": "Public Sector",
+        "cohort": "PSB",
+        "status": "FY25–FY26 net profit and CRAR; included in PSB pilot",
+        "pilotEligible": true,
+        "profileAvailable": true
+      },
+      {
+        "name": "Central Bank of India",
+        "category": "Public Sector",
+        "cohort": "PSB",
+        "status": "FY25–FY26 net profit and CRAR; included in PSB pilot",
+        "pilotEligible": true,
+        "profileAvailable": false
+      },
+      {
+        "name": "Indian Overseas Bank",
+        "category": "Public Sector",
+        "cohort": "PSB",
+        "status": "FY25–FY26 net profit and CRAR; included in PSB pilot",
+        "pilotEligible": true,
+        "profileAvailable": false
+      },
+      {
+        "name": "Bank of Maharashtra",
+        "category": "Public Sector",
+        "cohort": "PSB",
+        "status": "FY25–FY26 net profit and CRAR; included in PSB pilot",
+        "pilotEligible": true,
+        "profileAvailable": true
+      },
+      {
+        "name": "UCO Bank",
+        "category": "Public Sector",
+        "cohort": "PSB",
+        "status": "FY25–FY26 net profit and CRAR; included in PSB pilot",
+        "pilotEligible": true,
+        "profileAvailable": false
+      },
+      {
+        "name": "Punjab & Sind Bank",
+        "category": "Public Sector",
+        "cohort": "PSB",
+        "status": "FY25–FY26 net profit and CRAR; included in PSB pilot",
+        "pilotEligible": true,
+        "profileAvailable": false
+      },
+      {
+        "name": "Axis Bank",
+        "category": "Private Sector",
+        "cohort": "Private",
+        "status": "Selected historical profile; not sufficient for full score",
+        "pilotEligible": false,
+        "profileAvailable": true
+      },
+      {
+        "name": "Bandhan Bank",
+        "category": "Private Sector",
+        "cohort": "Private",
+        "status": "RBI universe registry; FY22–FY26 metrics not yet reconciled",
+        "pilotEligible": false,
+        "profileAvailable": false
+      },
+      {
+        "name": "CSB Bank",
+        "category": "Private Sector",
+        "cohort": "Private",
+        "status": "RBI universe registry; FY22–FY26 metrics not yet reconciled",
+        "pilotEligible": false,
+        "profileAvailable": false
+      },
+      {
+        "name": "City Union Bank",
+        "category": "Private Sector",
+        "cohort": "Private",
+        "status": "RBI universe registry; FY22–FY26 metrics not yet reconciled",
+        "pilotEligible": false,
+        "profileAvailable": false
+      },
+      {
+        "name": "DCB Bank",
+        "category": "Private Sector",
+        "cohort": "Private",
+        "status": "RBI universe registry; FY22–FY26 metrics not yet reconciled",
+        "pilotEligible": false,
+        "profileAvailable": false
+      },
+      {
+        "name": "Dhanlaxmi Bank",
+        "category": "Private Sector",
+        "cohort": "Private",
+        "status": "RBI universe registry; FY22–FY26 metrics not yet reconciled",
+        "pilotEligible": false,
+        "profileAvailable": false
+      },
+      {
+        "name": "Federal Bank",
+        "category": "Private Sector",
+        "cohort": "Private",
+        "status": "RBI universe registry; FY22–FY26 metrics not yet reconciled",
+        "pilotEligible": false,
+        "profileAvailable": false
+      },
+      {
+        "name": "HDFC Bank",
+        "category": "Private Sector",
+        "cohort": "Private",
+        "status": "Selected historical profile; not sufficient for full score",
+        "pilotEligible": false,
+        "profileAvailable": true
+      },
+      {
+        "name": "ICICI Bank",
+        "category": "Private Sector",
+        "cohort": "Private",
+        "status": "RBI universe registry; FY22–FY26 metrics not yet reconciled",
+        "pilotEligible": false,
+        "profileAvailable": false
+      },
+      {
+        "name": "IDBI Bank",
+        "category": "Private Sector",
+        "cohort": "Private",
+        "status": "RBI universe registry; FY22–FY26 metrics not yet reconciled",
+        "pilotEligible": false,
+        "profileAvailable": false
+      },
+      {
+        "name": "IDFC FIRST Bank",
+        "category": "Private Sector",
+        "cohort": "Private",
+        "status": "RBI universe registry; FY22–FY26 metrics not yet reconciled",
+        "pilotEligible": false,
+        "profileAvailable": false
+      },
+      {
+        "name": "IndusInd Bank",
+        "category": "Private Sector",
+        "cohort": "Private",
+        "status": "RBI universe registry; FY22–FY26 metrics not yet reconciled",
+        "pilotEligible": false,
+        "profileAvailable": false
+      },
+      {
+        "name": "Jammu & Kashmir Bank",
+        "category": "Private Sector",
+        "cohort": "Private",
+        "status": "RBI universe registry; FY22–FY26 metrics not yet reconciled",
+        "pilotEligible": false,
+        "profileAvailable": false
+      },
+      {
+        "name": "Karnataka Bank",
+        "category": "Private Sector",
+        "cohort": "Private",
+        "status": "RBI universe registry; FY22–FY26 metrics not yet reconciled",
+        "pilotEligible": false,
+        "profileAvailable": false
+      },
+      {
+        "name": "Karur Vysya Bank",
+        "category": "Private Sector",
+        "cohort": "Private",
+        "status": "RBI universe registry; FY22–FY26 metrics not yet reconciled",
+        "pilotEligible": false,
+        "profileAvailable": false
+      },
+      {
+        "name": "Kotak Mahindra Bank",
+        "category": "Private Sector",
+        "cohort": "Private",
+        "status": "Selected historical profile; not sufficient for full score",
+        "pilotEligible": false,
+        "profileAvailable": true
+      },
+      {
+        "name": "Nainital Bank",
+        "category": "Private Sector",
+        "cohort": "Private",
+        "status": "RBI universe registry; FY22–FY26 metrics not yet reconciled",
+        "pilotEligible": false,
+        "profileAvailable": false
+      },
+      {
+        "name": "RBL Bank",
+        "category": "Private Sector",
+        "cohort": "Private",
+        "status": "RBI universe registry; FY22–FY26 metrics not yet reconciled",
+        "pilotEligible": false,
+        "profileAvailable": false
+      },
+      {
+        "name": "South Indian Bank",
+        "category": "Private Sector",
+        "cohort": "Private",
+        "status": "RBI universe registry; FY22–FY26 metrics not yet reconciled",
+        "pilotEligible": false,
+        "profileAvailable": false
+      },
+      {
+        "name": "Tamilnad Mercantile Bank",
+        "category": "Private Sector",
+        "cohort": "Private",
+        "status": "RBI universe registry; FY22–FY26 metrics not yet reconciled",
+        "pilotEligible": false,
+        "profileAvailable": false
+      },
+      {
+        "name": "YES Bank",
+        "category": "Private Sector",
+        "cohort": "Private",
+        "status": "RBI universe registry; FY22–FY26 metrics not yet reconciled",
+        "pilotEligible": false,
+        "profileAvailable": false
+      },
+      {
+        "name": "AU Small Finance Bank",
+        "category": "Small Finance Bank",
+        "cohort": "SFB",
+        "status": "Selected historical profile; not sufficient for full score",
+        "pilotEligible": false,
+        "profileAvailable": true
+      },
+      {
+        "name": "Capital Small Finance Bank",
+        "category": "Small Finance Bank",
+        "cohort": "SFB",
+        "status": "RBI universe registry; FY22–FY26 metrics not yet reconciled",
+        "pilotEligible": false,
+        "profileAvailable": false
+      },
+      {
+        "name": "Equitas Small Finance Bank",
+        "category": "Small Finance Bank",
+        "cohort": "SFB",
+        "status": "RBI universe registry; FY22–FY26 metrics not yet reconciled",
+        "pilotEligible": false,
+        "profileAvailable": false
+      },
+      {
+        "name": "ESAF Small Finance Bank",
+        "category": "Small Finance Bank",
+        "cohort": "SFB",
+        "status": "RBI universe registry; FY22–FY26 metrics not yet reconciled",
+        "pilotEligible": false,
+        "profileAvailable": false
+      },
+      {
+        "name": "Jana Small Finance Bank",
+        "category": "Small Finance Bank",
+        "cohort": "SFB",
+        "status": "RBI universe registry; FY22–FY26 metrics not yet reconciled",
+        "pilotEligible": false,
+        "profileAvailable": false
+      },
+      {
+        "name": "Shivalik Small Finance Bank",
+        "category": "Small Finance Bank",
+        "cohort": "SFB",
+        "status": "RBI universe registry; FY22–FY26 metrics not yet reconciled",
+        "pilotEligible": false,
+        "profileAvailable": false
+      },
+      {
+        "name": "slice Small Finance Bank (formerly North East SFB)",
+        "category": "Small Finance Bank",
+        "cohort": "SFB",
+        "status": "RBI universe registry; FY22–FY26 metrics not yet reconciled",
+        "pilotEligible": false,
+        "profileAvailable": false
+      },
+      {
+        "name": "Suryoday Small Finance Bank",
+        "category": "Small Finance Bank",
+        "cohort": "SFB",
+        "status": "RBI universe registry; FY22–FY26 metrics not yet reconciled",
+        "pilotEligible": false,
+        "profileAvailable": false
+      },
+      {
+        "name": "Ujjivan Small Finance Bank",
+        "category": "Small Finance Bank",
+        "cohort": "SFB",
+        "status": "RBI universe registry; FY22–FY26 metrics not yet reconciled",
+        "pilotEligible": false,
+        "profileAvailable": false
+      },
+      {
+        "name": "Unity Small Finance Bank",
+        "category": "Small Finance Bank",
+        "cohort": "SFB",
+        "status": "RBI universe registry; FY22–FY26 metrics not yet reconciled",
+        "pilotEligible": false,
+        "profileAvailable": false
+      },
+      {
+        "name": "Utkarsh Small Finance Bank",
+        "category": "Small Finance Bank",
+        "cohort": "SFB",
+        "status": "RBI universe registry; FY22–FY26 metrics not yet reconciled",
+        "pilotEligible": false,
+        "profileAvailable": false
+      }
+    ],
+    "separateCategories": [
+      {
+        "name": "Regional Rural Banks",
+        "status": "Separate peer index; excluded from universal-bank composite because mandate and structure differ."
+      },
+      {
+        "name": "Payments Banks",
+        "status": "Separate peer index; do not compare on gross advances, NPA or universal-bank profitability measures."
+      },
+      {
+        "name": "Local Area Banks and cooperative banks",
+        "status": "Outside the core scheduled commercial bank comparison; separate treatment required."
+      }
     ]
   }
 }
