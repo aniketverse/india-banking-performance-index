@@ -23,8 +23,25 @@
     const s=values.slice().sort((a,b)=>a-b);let first=s.findIndex(x=>x===value),last=s.lastIndexOf(value);let pct=((first+last)/2)/(s.length-1)*100;
     return direction==='lower'?100-pct:pct;
   }
+  const PROVENANCE_FIELDS=['source_url','source_page_or_table','accounting_basis','scope_basis'];
+  const MARKET_FIELDS=['market_cap_crore','pb_ratio','pe_ratio','shareholder_return_1y_pct','shareholder_return_3y_cagr_pct'];
+  const BALANCE_FIELDS=['fy22_assets_crore','fy26_assets_crore','fy22_deposits_crore','fy26_deposits_crore','fy22_advances_crore','fy26_advances_crore','fy22_net_profit_crore','fy26_net_profit_crore'];
+  const NUMERIC_FIELDS=[...new Set([...INPUT_METRICS,...BALANCE_FIELDS,...MARKET_FIELDS])];
+  function inspectInputRow(raw){
+    const errors=[],marketErrors=[];
+    for(const k of NUMERIC_FIELDS){const v=raw[k];if(v!==undefined&&String(v).trim()!==''&&number(v)===null)errors.push('Invalid numeric value: '+k);}
+    for(const k of PROVENANCE_FIELDS)if(!String(raw[k]||'').trim())errors.push('Missing provenance: '+k);
+    if(String(raw.source_url||'').trim()&&!/^https?:\/\//i.test(String(raw.source_url).trim()))errors.push('source_url must be an http/https URL');
+    const marketPresent=MARKET_FIELDS.some(k=>String(raw[k]??'').trim()!=='');
+    if(marketPresent){
+      if(!/^\d{4}-\d{2}-\d{2}$/.test(String(raw.market_data_asof_date||'')))marketErrors.push('Market data requires an ISO date (YYYY-MM-DD)');
+      for(const k of MARKET_FIELDS){const v=raw[k];if(v!==undefined&&String(v).trim()!==''&&number(v)===null)marketErrors.push('Invalid market numeric value: '+k);}
+    }
+    return {errors:[...new Set(errors)],marketErrors:[...new Set(marketErrors)]};
+  }
   function scoreRows(input){
-    const rows=input.map(normaliseRow).filter(r=>r.bank_name&&r.category);
+    const inspected=input.map(raw=>({raw,check:inspectInputRow(raw)}));
+    const rows=inspected.map(x=>({...normaliseRow(x.raw),validationErrors:x.check.errors,marketValidationErrors:x.check.marketErrors})).filter(r=>r.bank_name&&r.category);
     const seen=new Set();for(const r of rows){const id=(r.category+'|'+r.bank_name).toLowerCase();if(seen.has(id))throw new Error('Duplicate bank/category row: '+r.bank_name);seen.add(id);}
     const cohorts=new Map();rows.forEach(r=>{const k=r.category||'Unclassified';if(!cohorts.has(k))cohorts.set(k,[]);cohorts.get(k).push(r)});
     const results=[];
@@ -40,13 +57,11 @@
         const ms=metricScores.get(r.bank_name)||{};let dims={},dimCount=0,metricCount=0;
         DIMENSIONS.forEach(d=>{const v=d.metrics.map(m=>ms[m[0]]).filter(Number.isFinite);if(v.length){dims[d.key]=v.reduce((a,b)=>a+b,0)/v.length;dimCount++;metricCount+=v.length;}else dims[d.key]=null;});
         const dataCompleteness=INPUT_METRICS.filter(k=>Number.isFinite(r[k])).length/INPUT_METRICS.length*100;
-        const provenanceFields=['source_url','source_page_or_table','accounting_basis','scope_basis'];
-        const missingProvenance=provenanceFields.filter(k=>!String(r[k]||'').trim());
-        if(!/^https?:\/\//i.test(String(r.source_url||''))) { if(!missingProvenance.includes('source_url')) missingProvenance.push('source_url (must be http/https URL)'); }
-        const eligible=dimCount===7&&metricCount>=15&&missingProvenance.length===0;
+        const validationErrors=r.validationErrors||[];
+        const eligible=dimCount===7&&metricCount>=15&&validationErrors.length===0;
         const score=eligible?DIMENSIONS.reduce((s,d)=>s+(dims[d.key]*d.weight/100),0):null;
-        let reason=eligible?'Meets 7-dimension, 15-metric and provenance gates':`Score withheld: ${dimCount}/7 dimensions, ${metricCount}/25 metrics`+(missingProvenance.length?`; missing provenance: ${missingProvenance.join(', ')}`:'');
-        results.push({bank_name:r.bank_name,category,score,dimensions:dims,dimensionsCovered:dimCount,metricsScored:metricCount,dataCompleteness,eligible,reason});
+        let reason=eligible?'Meets 7-dimension, 15-metric and provenance gates':`Score withheld: ${dimCount}/7 dimensions, ${metricCount}/25 metrics`+(validationErrors.length?`; validation: ${validationErrors.join('; ')}`:'');
+        results.push({bank_name:r.bank_name,category,score,dimensions:dims,dimensionsCovered:dimCount,metricsScored:metricCount,dataCompleteness,eligible,reason,validationErrors,marketValidationErrors:r.marketValidationErrors||[]});
       });
     }
     // Rank only eligible banks within category; no cross-category rank.
@@ -57,7 +72,7 @@
       const dates=[...new Set(cohorts.get(category).map(r=>String(r.market_data_asof_date||'').trim()).filter(Boolean))];
       dates.forEach(date=>{
         const peers=cohorts.get(category).filter(r=>String(r.market_data_asof_date||'').trim()===date);
-        const candidates=peers.map(r=>({input:r,result:results.find(x=>x.bank_name===r.bank_name&&x.category===category)})).filter(x=>x.result&&x.result.eligible&&number(x.input.pb_ratio)>0&&number(x.input.pe_ratio)>0&&number(x.input.shareholder_return_1y_pct)!==null&&number(x.input.shareholder_return_3y_cagr_pct)!==null);
+        const candidates=peers.map(r=>({input:r,result:results.find(x=>x.bank_name===r.bank_name&&x.category===category)})).filter(x=>x.result&&x.result.eligible&&!(x.result.marketValidationErrors||[]).length&&number(x.input.pb_ratio)>0&&number(x.input.pe_ratio)>0&&number(x.input.shareholder_return_1y_pct)!==null&&number(x.input.shareholder_return_3y_cagr_pct)!==null);
         if(candidates.length<3)return;
         const pbVals=candidates.map(x=>number(x.input.pb_ratio)),peVals=candidates.map(x=>number(x.input.pe_ratio));
         const r1Vals=candidates.map(x=>number(x.input.shareholder_return_1y_pct)),r3Vals=candidates.map(x=>number(x.input.shareholder_return_3y_cagr_pct));
@@ -82,6 +97,6 @@
     if(field.length||row.length){row.push(field);rows.push(row);}if(!rows.length)return [];
     const headers=rows.shift().map(h=>h.trim().replace(/^\uFEFF/,''));return rows.filter(r=>r.some(x=>String(x).trim()!=='')).map(r=>Object.fromEntries(headers.map((h,i)=>[h,r[i]??''])));
   }
-  root.IBPIScoring={DIMENSIONS,INPUT_METRICS,normaliseRow,percentile,scoreRows,parseCSV};
+  root.IBPIScoring={DIMENSIONS,INPUT_METRICS,normaliseRow,percentile,inspectInputRow,scoreRows,parseCSV};
   if(typeof module!=='undefined'&&module.exports)module.exports=root.IBPIScoring;
 })(typeof window!=='undefined'?window:globalThis);
