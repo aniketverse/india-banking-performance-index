@@ -5,7 +5,7 @@
     "financialYear": "FY 2025-26",
     "historicalPeriod": "FY 2021-22 to FY 2025-26",
     "marketDate": "4 November 2026 (figures transcribed from the research conversation; independently revalidation required)",
-    "status": "V4 research release: calculated PSB pilot plus expanded RBI-based bank-universe registry and client-side full-index scoring workbench",
+    "status": "V5 research release: PSB pilot score calculated from official FY25/FY26 DFS comparison; strict input validation and tested full-index scoring workbench. Full IBPI remains pending full audited peer dataset.",
     "disclaimer": "The PSB three-factor pilot is calculated only within the 12-bank PSB cohort. The all-bank fundamental and investment rankings are not certified because the complete bank-wise audited input dataset and the common-date market dataset have not yet been reconciled. The data lab can calculate category-normalised scores from a completed input CSV.",
     "currency": "INR",
     "sources": [
@@ -98,11 +98,21 @@
         "name": "ICICI Bank – Annual Report FY2025-26",
         "url": "https://www.icici.bank.in/about-us/annual/2026",
         "use": "Official FY26 annual report, Board report, management discussion and financial statements."
+      },
+      {
+        "name": "PIB / Ministry of Finance – PSBs FY2025-26 performance release (12 May 2026)",
+        "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2260203&lang=1&reg=3",
+        "use": "Official FY26 PSB aggregate performance context: net profit, GNPA/NNPA, business, advances, provisioning coverage, slippages, CRAR and cost-to-income."
+      },
+      {
+        "name": "DFS Banking Analytics – FY25 and FY26 bank-wise PSB net profit and CRAR",
+        "url": "https://www.financialservices.gov.in/banking-analytics",
+        "use": "Primary bank-wise source for the 12-bank PSB pilot inputs."
       }
     ],
     "universeBaseline": "RBI Report on Trend and Progress of Banking in India 2024-25: 12 PSBs, 21 private sector banks, 11 SFBs and 44 foreign banks operating in India at end-March 2025. Domestic roster labels have been refreshed using RBI bank directory information available in 2026; foreign-bank count is the FY25 baseline.",
-    "release": "V4",
-    "lastUpdated": "2026-11-06"
+    "release": "V5",
+    "lastUpdated": "2026-11-15"
   },
   "psuBanks": [
     {
@@ -912,7 +922,7 @@
     "status": "Calculated pilot; not the full IBPI",
     "cohort": "12 Indian public-sector banks only",
     "asOf": "31 March 2026",
-    "source": "Department of Financial Services, Government of India – Banking Analytics",
+    "source": "Department of Financial Services, Banking Analytics; official FY25/FY26 comparison table",
     "sourceUrl": "https://www.financialservices.gov.in/banking-analytics",
     "method": "Each metric is converted to a percentile rank within the 12-bank PSB cohort. Higher values receive higher percentiles. Ties receive average ranks. The weighted contributions are summed to 100.",
     "weights": [
@@ -1145,7 +1155,8 @@
       "The pilot is based on only three indicators and is not the final seven-dimension index.",
       "The FY26 official DFS comparison is bank-wise for net profit and CRAR; FY25 values are included for one-year profit growth.",
       "The final fundamental model must be applied within comparable bank categories and use audited source-backed data for the seven dimensions."
-    ]
+    ],
+    "lastVerified": "2026-11-15"
   },
   "bankUniverse": {
     "baselineDate": "31 March 2025 (RBI Report on Trend and Progress of Banking in India 2024-25); domestic bank names cross-checked to RBI directory pages available in 2026",
